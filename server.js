@@ -2,7 +2,7 @@ var express =require('express');
 var app=express();
 app.use(express.static('public'));
 app.get("/",(req,res)=>{
-    console.log("Welcome to our server");
+    res.send("Welcome to our server");
 });
 app.get("/product",(req,res)=>{
 
@@ -15,7 +15,8 @@ app.get("/product",(req,res)=>{
 
        "qyantity":800
         }
+        res.send(p);
 });
-res.send(p);
+
 app.listen(8000);
 console.log("server is running on port 8000");
